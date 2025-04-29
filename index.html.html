@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عبثستان - أرض اللا معنى</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background-color: #fce4ec;
+      text-align: center;
+      padding: 50px;
+      transition: background-color 0.5s;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #e91e63;
+      color: white;
+    }
+    #wisdom {
+      margin: 20px;
+      font-size: 20px;
+      color: #3f51b5;
+    }
+    #counter {
+      font-size: 24px;
+      color: #009688;
+      margin: 20px;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin: 20px auto;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      font-size: 18px;
+    }
+    form {
+      margin-top: 30px;
+    }
+    textarea {
+      width: 300px;
+      height: 100px;
+      font-size: 16px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌪️ أهلاً بك في عبثستان!</h1>
+  <button onclick="doChaos()">اضغطني لو تجرؤ</button>
+  <div id="wisdom">💬 لا شيء منطقي يحدث هنا...</div>
+
+  <div id="counter">عداد الهراء العالمي: <span id="nonsense">0</span></div>
+
+  <img id="randomImage" src="https://placekitten.com/200/200" alt="عبث">
+
+  <ul>
+    <li>عدد المرات التي رمشت فيها اليوم: 13492</li>
+    <li>حرارة جو المريخ قبل 20 دقيقة: -63°C</li>
+    <li>أطول عطسة تم تسجيلها: 97 دقيقة</li>
+  </ul>
+
+  <form onsubmit="sendScream(event)">
+    <h3>📢 ارسل صرختك إلى الفراغ:</h3>
+    <textarea placeholder="آآآآآآآه..."></textarea><br><br>
+    <button type="submit">أرسل</button>
+  </form>
+
+  <script>
+    let nonsense = 0;
+    setInterval(() => {
+      nonsense++;
+      document.getElementById("nonsense").textContent = nonsense;
+    }, 1000);
+
+    const messages = [
+      "تم إرسال ملف PDF إلى القمر!",
+      "القطط الآن تتحكم بالاقتصاد العالمي!",
+      "لقد ربحت لا شيء! مبروك!",
+      "تمت برمجة هذا الزر على يد روبوت نائم.",
+      "هل سمعت عن الفيل الطائر؟ لا؟ ممتاز."
+    ];
+
+    const colors = ["#ffeb3b", "#c8e6c9", "#e1bee7", "#b3e5fc", "#ffcdd2"];
+
+    const images = [
+      "https://i.imgur.com/3GvwNBf.png",
+      "https://i.imgur.com/B5XcEip.png",
+      "https://i.imgur.com/5PZ0TTv.png"
+    ];
+
+    function doChaos() {
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById("wisdom").textContent = msg;
+      document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      document.getElementById("randomImage").src = images[Math.floor(Math.random() * images.length)];
+    }
+
+    function sendScream(event) {
+      event.preventDefault();
+      alert("شكراً، تم تخزين صرختك في الثقب الأسود.");
+    }
+  </script>
+</body>
+</html>
